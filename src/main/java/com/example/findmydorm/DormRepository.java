@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface DormRepository extends MongoRepository<Dorm, String> {
 
+
+
     // ค้นหาหอพักด้วย keyword ใน name
     @Query("{ 'name': { $regex: ?0, $options: 'i' } }")
     List<Dorm> findByName(String keyword);

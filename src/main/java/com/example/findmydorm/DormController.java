@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/dorms")
 public class DormController {
@@ -39,6 +40,11 @@ public class DormController {
     @GetMapping("/search/price")
     public List<Dorm> searchDormsByPrice(@RequestParam int maxPrice) {
         return dormService.searchByMaxPrice(maxPrice);
+    }
+
+    @GetMapping("/{id}")
+    public Dorm getDormById(@PathVariable String id) {
+        return dormService.getDormById(id);
     }
 
 }

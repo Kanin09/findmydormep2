@@ -5,6 +5,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 
 @Document("dormitories")
 public class Dorm {
@@ -16,14 +18,16 @@ public class Dorm {
     private int price;
     private String tel;
     private String address;
+    private List<String> images;
 
 
-    public Dorm(String name, int distance, int price, String tel, String address) {
+    public Dorm(String name, int distance, int price, String tel, String address, List<String> images) {
         this.name = name;
         this.distance = distance;
         this.price = price;
         this.tel = tel;
         this.address = address;
+        this.images = images;
     }
 
     public String getId() {
@@ -32,6 +36,14 @@ public class Dorm {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
     }
 
     public String getName() {
