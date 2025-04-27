@@ -18,19 +18,37 @@ public class Dorm {
     private String tel;
     private String address;
     private List<String> images;
-    private List<Obj> facilities;
     private List<Obj> waterRate;
+    private List<Obj> facilities;
+    private List<Obj> security;
 
 
-    public Dorm(String name, int distance, int price, String tel, String address, List<String> images, List<Obj> facilities, List<Obj> waterRate) {
+    public Dorm(String name, int distance, int price, String tel, String address, List<String> images, List<Obj> waterRate, List<Obj> facilities, List<Obj> security) {
         this.name = name;
         this.distance = distance;
         this.price = price;
         this.tel = tel;
         this.address = address;
         this.images = images;
-        this.facilities = facilities;
         this.waterRate = waterRate;
+        this.facilities = facilities;
+        this.security = security;
+    }
+
+    public List<Obj> getFacilities() {
+        return facilities;
+    }
+
+    public void setFacilities(List<Obj> facilities) {
+        this.facilities = facilities;
+    }
+
+    public List<Obj> getSecurity() {
+        return security;
+    }
+
+    public void setSecurity(List<Obj> security) {
+        this.security = security;
     }
 
     public List<Obj> getWaterRate() {
@@ -41,13 +59,7 @@ public class Dorm {
         this.waterRate = waterRate;
     }
 
-    public List<Obj> getFacilities() {
-        return facilities;
-    }
 
-    public void setFacilities(List<Obj> facilities) {
-        this.facilities = facilities;
-    }
 
     public String getId() {
         return id;
